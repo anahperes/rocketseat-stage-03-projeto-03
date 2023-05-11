@@ -1,4 +1,4 @@
-<strong>Rocketseat - Stage 02 / Projeto 03</strong>
+<strong>Rocketseat - Stage 03 / Projeto 03</strong>
 
 I developed this during Rocketseat initial classes about forms.
 
