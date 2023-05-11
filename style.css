@@ -1,0 +1,238 @@
+/* GLOBAL SELECTOR (WHOLE PAGE) */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* BODY SETUP */
+body {
+    background-color: #E5E5E5;
+}
+
+/* BEFORE BODY = HEADER BACKGROUND */
+body::before {
+    content: '';
+    width: 100%;
+    height: 368px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #121214;
+}
+
+/* BODY AND INPUT TEXT */
+body, input, textarea, select {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* H1, LEGEND AND BUTTON TEXT SETUP */
+h1, legend, button {                        /* MAYK COLOCOU O SETUP DE FONTE DA LEGEND NA legend {} */
+    font-family: 'Archivo', sans-serif;
+}
+
+/* PAGE */
+.page {
+    width: 736px;
+    margin: 80px auto;
+}
+
+/* HEADER */
+header {
+    width: 319px;
+    margin: autol;
+}
+
+/* HEADER H1 SETUP */
+header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    color:#FFFFFF;
+    margin-bottom: 24px;
+}
+
+/* HEADER PARAGRAPH SETUP */
+header p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #42D3FF;
+}
+
+/* FORM */
+form {
+    width: 736px;
+    height: 1430px;
+    background-color: #FAFAFC;
+    border-radius: 8px 8px 0px 0px;
+    margin-top: 38px;
+    padding: 64px;
+    display: flex;              /* AO COLOCAR O display:flex OS ITENS DE fieldset SÃO POSICIONADOS VERTICALMENTE (flex-direction: column) E É DADO O ESPAÇAMENTO DE 48px USANDO O gap: 48px. */
+    flex-direction: column;
+    gap: 48px;
+}
+
+fieldset {
+    border: none;
+}
+
+/* LEGEND */
+fieldset legend {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 34px;
+    color: #32264D;
+    border-bottom : 1px solid #E6E6F0;
+    width: 100%;
+    padding-bottom: 16px;
+}
+
+/* INPUT WRAPPER */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;                /* MAYK COLOCOU ESSE ESPAÇO USANDO A PROPRIEDADE margin-bottom .input-wrapper label */
+    margin-top: 24px;
+}
+
+/* CHECBOX WRAPPER */
+.checkbox-wrapper {
+    margin-top: 24px;               /* PARA AFASTAR CORRETAMENTE O CHECKBOX DO INPUT SUPERIOR */
+    position: relative;
+}
+
+.checkbox-wrapper  label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0px;                /* PARA ALINHAR CORRETAMENTE O CHECKBOX E O TEXTO. CASO CONTRÁRIO O LABEL FICA LEVEMENTE ACIMA DO CHECKBOX */
+}
+
+.checkbox-wrapper input {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;             /* PARA SUMIR COM O QUADRADINHO DO CHECKBOX ORIGINAL */
+}
+
+/* SQUARE CHECKBOX CREATED HERE, ABOVE LABEL */
+.checkbox-wrapper label::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    display: block;
+}
+
+/* CHECK ON SQUARE CHECKBOX  */
+.checkbox-wrapper input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* OUTLINE ON CHECKBOX WHILE ON FOCUS */
+.checkbox-wrapper input:focus + label::before {
+    outline: 2px solid rgb(0,84,197);
+}
+
+/* INPUT AND TEXT AREA */
+.input-wrapper input, .input-wrapper textarea, .input-wrapper select {
+    width: 100%;
+    height: 56px;
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+    padding: 0px 24px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #4E4958;
+}
+
+/* INPUT TEXT POSITION SETUP */
+.input-wrapper textarea {
+    padding: 0px;               /* ACHO QUE AINDA PRECISA MELHORAR O PADDING */
+    height: 168px;
+}
+
+/* SELECT DROPDOWN ARROW */
+.input-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right 24px top 50%;
+}
+
+/* DIA E HORA SETUP OF 3 COLUMN ROW */
+.three-col {
+    display: flex;
+    justify-content: space-between;             /* MAYK NÃO USOU A PROPERTY justify-content */
+    gap: 20px;
+}
+
+/* SELECTION OF 1ST DIV (COLUMN) ON .three-col */
+.three-col > div:nth-child(1) {
+    width: 100%;
+}
+
+input:invalid {
+    border: 1px solid #FF1010;
+}
+
+/* LABEL */
+label {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #4E4958;
+}
+
+/* SPAN */
+label span {
+    font-size: 12px;
+    line-height: 20px;
+    color: #75717e;
+    margin-left: 12px;              /* MAYK COLOCOU ESSA PROPRIEDADE EM .input-wrapper label span {} */
+}
+
+/* SPAN ON HOVER */
+label span:hover {
+    color: #4E4958;
+}
+
+/* BUTTON AREA BG */
+.button {
+    width: 736px;
+    height: 136px;
+    border-top: 1px solid #D6D6D6;
+    background-color: #F0F0F4;
+    border-radius: 0px 0px 8px 8px;
+}
+
+/* BUTTON SETUP */
+.button input {
+    background: #04D361;
+    width: 608px;
+    height: 56px;
+    border-radius: 8px;
+    border: 0px;
+    margin: 40px 64px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* BUTTON COLOR ON HOVER */
+.button input:hover {
+    background: #16c967;
+}
+
+
